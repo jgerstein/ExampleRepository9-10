@@ -4,6 +4,9 @@ float x, y, dX, dY, diam;
 void setup() {
   size(800, 600);
 
+  //set colorMode to HSB
+  colorMode(HSB, 360, 100, 100, 100);
+
   //initialize variables
   x=width/2;
   y=height/2;
@@ -14,6 +17,9 @@ void setup() {
 
 void draw() {
   background(0);
+
+  //rainbow ball
+  fill(frameCount%360, 100, 100);
 
   //draw ball
   ellipse(x, y, diam, diam);
