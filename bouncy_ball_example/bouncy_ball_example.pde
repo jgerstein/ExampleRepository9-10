@@ -9,6 +9,7 @@ float[] dX = new float[count];
 float[] dY = new float[count];
 float[] diam = new float[count];
 float[] hue = new float[count];
+float[] growth = new float[count];
 
 void setup() {
   size(800, 600);
@@ -24,6 +25,7 @@ void setup() {
     dX[i]=random(-5, 5);
     dY[i]=random(-5, 5);
     hue[i] = random(360);
+    growth[i] = random(-1, 1);
   }
 }
 void draw() {
@@ -55,9 +57,9 @@ void draw() {
       dY[i] *= -1;
       //dY[i] = dY[i] * -1;
     }
-    diam[i]++;
-    if (diam[i] > maxSize) {
-      diam[i] = minSize;
+    diam[i] += growth[i];
+    if (diam[i] > maxSize || diam[i] < minSize) {
+      growth[i] *= -1;
     }
   }
 }
