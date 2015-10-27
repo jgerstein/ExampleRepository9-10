@@ -1,6 +1,7 @@
 int count = 200;
 int minSize = 5;
 int maxSize = 100;
+
 //making arrays
 float[] x = new float[count];
 float[] y = new float[count];
@@ -53,6 +54,10 @@ void draw() {
     if (y[i] > height || y[i] < 0) {
       dY[i] *= -1;
       //dY[i] = dY[i] * -1;
+    }
+    diam[i]++;
+    if (diam[i] > maxSize) {
+      diam[i] = minSize;
     }
   }
 }
