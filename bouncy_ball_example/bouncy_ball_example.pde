@@ -52,4 +52,10 @@ void draw() {
   if (y1 > height || y1 < 0) {
     dY1 *= -1;
   }
+  if (dist(x, y, x1, y1) < diam/2 + diam1/2) {
+    dX *= -1;
+    dY *= -1;
+    dX1 *= -1;
+    dY1 *= -1;
+  }
 }
